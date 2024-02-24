@@ -168,18 +168,22 @@
             border-top-right-radius: 5px;
         }
 
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* Espace entre les cartes */
+        }
+
         .card {
-            width: 100%;
-            /* Utilisez une largeur de 100% pour que la carte occupe toute la largeur de son conteneur */
+            flex: 0 0 calc(50% - 20px);
+            /* Deux cartes par ligne avec un espace de 20px */
             max-width: 400px;
-            /* Définissez une largeur maximale pour éviter que la carte ne devienne trop large sur les grands écrans */
             background-color: #f9f9f9;
             border: 1px solid #ccc;
             border-radius: 5px;
             margin: 10px auto;
-            /* Centrez la carte horizontalement */
             overflow: hidden;
-            /* Cachez le contenu qui dépasse la carte pour éviter les débordements */
             cursor: pointer;
         }
 
@@ -189,7 +193,6 @@
             padding: 10px;
             margin: 0;
             font-size: 14px;
-            /* Taille de la police réduite pour les années */
         }
 
         .card .content {
@@ -198,25 +201,17 @@
 
         .card .card-image {
             width: 100%;
-            /* Faites en sorte que l'image remplisse entièrement la largeur de la carte */
             height: auto;
-            /* Maintenez les proportions de l'image */
             display: block;
-            /* Assurez-vous que l'image ne soit pas déformée et respecte les marges */
         }
 
         .card h3 {
             margin-top: 10px;
-            /* Ajoutez un espace entre l'image et le titre */
             font-size: 18px;
-            /* Taille de la police pour le titre */
         }
-
-        /* Ajoutez vos styles existants ici */
 
         .hidden {
             display: none;
-            /* Utilisez cette classe pour cacher l'élément */
         }
     </style>
 </head>
@@ -276,8 +271,74 @@
             </div>
         </div>
 
+        <!-- Expérience Professionnelle 2 -->
+        <div class="card" data-toggle="details">
+            <div class="year">Juin 2022 - Août 2022</div>
+            <div class="content">
+                <img class="card-image" src="images/logo-scalandes.jpg" alt="Scalandes">
+                <h3>Préparateur de commande</h3>
+                <p class="description hidden">Description de préparateur de commandes.</p>
+            </div>
+        </div>
+    </div>
+    <div class="timeline" id="timeline">
+        <div class="card" data-toggle="details">
+            <div class="year">Février 2022 - Juin 2022</div>
+            <div class="content">
+                <img class="card-image" src="images/logo-ufc.jpg" alt="Ufc-Que-Choisir">
+                <h3>Stage à UFC-Que-Choisir, développeur Web.</h3>
+                <p class="description hidden">Description du stage à UFC-Que-Choisir.</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="timeline" id="timeline">
+        <div class="card" data-toggle="details">
+            <div class="year">Juin 2021 - Septembre 2021</div>
+            <div class="content">
+                <img class="card-image" src="images/gaea.png" alt="Gaea21">
+                <h3>Stage chez Gaea21, développeur Web.</h3>
+                <p class="description hidden">Description du stage chez Gaea21.</p>
+            </div>
+        </div>
+        <div class="card" data-toggle="details">
+            <div class="year">Juillet 2020 - Août 2020</div>
+            <div class="content">
+                <img class="card-image" src="images/metro.jpg" alt="METRO">
+                <h3>Emploi saisonnier chez METRO Bordeaux.</h3>
+                <p class="description hidden">Description de l'expérience chez METRO.</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="card" data-toggle="details">
+        <div class="year">Juillet 2017</div>
+        <div class="content">
+            <img class="card-image" src="images/logo-restos-du-coeur.jpg" alt="Restos du Coeur">
+            <h3>Bénévole au sein des Restos du Coeur à Mont-de-Marsan.</h3>
+            <p class="description hidden">Description de l'expérience aux Restos du Coeur.</p>
+        </div>
+    </div>
+
+    <div class="timeline" id="timeline">
+        <div class="card" data-toggle="details">
+            <div class="year">Décembre 2016</div>
+            <div class="content">
+                <img class="card-image" src="images/Bordeaux_Metropole.png" alt="Restos du Coeur">
+                <h3>Stage de troisième dans l'urbanisme à Bordeaux Métropole.</h3>
+                <p class="description hidden">Description de l'expérience à Bordeaux Métropole.</p>
+            </div>
+        </div>
+
+        <div class="card" data-toggle="details">
+            <div class="year">2013 - 2017</div>
+            <div class="content">
+                <img class="card-image" src="images/pena-el-juli.jpg" alt="pena el juli">
+                <h3>Bénévole au sein de la Peña El Juli pendant les fêtes de la Madelaine a Mont-de-Marsan.</h3>
+                <p class="description hidden">Description de l'expérience à la Peña El Juli.</p>
+            </div>
+        </div>
+    </div>
     </div>
 
     <!-- Popup détaillée -->
