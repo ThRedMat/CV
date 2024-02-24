@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             background-color: #f8f9fa;
             color: #333;
         }
+
         header {
             background-color: #f2f2f2;
             padding: 10px;
@@ -19,32 +21,39 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .navbar img {
             width: 100px;
             height: auto;
             background-image: url(/images/mathieu1.png);
         }
+
         .menu-navbar ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
         }
+
         .menu-navbar li {
             margin-right: 20px;
         }
+
         .menu-navbar li:last-child {
             margin-right: 0;
         }
+
         .menu-navbar a {
             text-decoration: none;
             color: #333;
         }
+
         @media only screen and (max-width: 1980px) {
             .menu-navbar {
                 margin-right: 10px;
             }
         }
+
         .profil {
             background-color: #fff;
             padding: 20px;
@@ -53,6 +62,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 800px;
         }
+
         .profil h2 {
             color: #343a40;
             border-bottom: 2px solid #343a40;
@@ -60,6 +70,7 @@
             margin-bottom: 20px;
             text-align: center;
         }
+
         .profil img {
             width: 200px;
             height: auto;
@@ -67,11 +78,13 @@
             margin-right: 20px;
             float: left;
         }
+
         .profil p {
             font-size: 18px;
             line-height: 1.8;
             margin-bottom: 20px;
         }
+
         /* Nouveaux styles pour la section Expériences Professionnelles */
         .experience-section {
             background-color: #fff;
@@ -81,6 +94,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 800px;
         }
+
         .experience-section h2 {
             color: #343a40;
             border-bottom: 2px solid #343a40;
@@ -88,22 +102,125 @@
             margin-bottom: 20px;
             text-align: center;
         }
+
         .experience {
             margin-bottom: 30px;
         }
+
         .experience-title {
             font-weight: bold;
             margin-bottom: 5px;
         }
+
         .experience-dates {
             color: #666;
             margin-bottom: 10px;
         }
+
         .experience-description {
             margin-bottom: 20px;
         }
+
+        /* Ajoutez vos styles existants ici */
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .close:hover {
+            color: #f00;
+        }
+
+        .card-image {
+            max-width: 100%;
+            height: auto;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .card {
+            width: 100%;
+            /* Utilisez une largeur de 100% pour que la carte occupe toute la largeur de son conteneur */
+            max-width: 400px;
+            /* Définissez une largeur maximale pour éviter que la carte ne devienne trop large sur les grands écrans */
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px auto;
+            /* Centrez la carte horizontalement */
+            overflow: hidden;
+            /* Cachez le contenu qui dépasse la carte pour éviter les débordements */
+            cursor: pointer;
+        }
+
+        .card .year {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin: 0;
+            font-size: 14px;
+            /* Taille de la police réduite pour les années */
+        }
+
+        .card .content {
+            padding: 20px;
+        }
+
+        .card .card-image {
+            width: 100%;
+            /* Faites en sorte que l'image remplisse entièrement la largeur de la carte */
+            height: auto;
+            /* Maintenez les proportions de l'image */
+            display: block;
+            /* Assurez-vous que l'image ne soit pas déformée et respecte les marges */
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            /* Ajoutez un espace entre l'image et le titre */
+            font-size: 18px;
+            /* Taille de la police pour le titre */
+        }
+
+        /* Ajoutez vos styles existants ici */
+
+        .hidden {
+            display: none;
+            /* Utilisez cette classe pour cacher l'élément */
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="navbar">
@@ -129,31 +246,66 @@
                 <img src="images/mathieu-darribau.jpg" alt="Mathieu DARRIBAU">
             </div>
             <div class="contenu-informations">
-                <p>Volontaire, sérieux et toujours avide d'apprendre, je suis passionné par le développement web et déterminé à faire carrière dans ce domaine. 
-                    <br> Diplômé d'un Master 2 en développement Web à Bordeaux Ynov Campus, j'ai acquis une expérience pratique et une compréhension approfondie des principes fondamentaux du développement web.
-                    <br> Fort de cette base solide, je suis capable de mener à bien des projets et de résoudre les défis rencontrés avec assurance. 
-                    <br> Ma capacité à me débrouiller dans ce domaine m'a permis d'acquérir une expertise pratique, mais je suis également conscient de l'importance de l'apprentissage continu dans un domaine aussi dynamique. 
-                    <br> Je suis donc constamment à la recherche de nouvelles connaissances et de nouvelles compétences pour me perfectionner davantage. 
-                    <br> Actuellement à la recherche d'opportunités professionnelles dans le développement web, je suis enthousiaste à l'idée de contribuer à des projets innovants et de faire progresser ma carrière dans ce domaine passionnant.
+                <p>Volontaire, sérieux et toujours avide d'apprendre, je suis passionné par le développement web et
+                    déterminé à faire carrière dans ce domaine.
+                    <br> Diplômé d'un Master 2 en développement Web à Bordeaux Ynov Campus, j'ai acquis une expérience
+                    pratique et une compréhension approfondie des principes fondamentaux du développement web.
+                    <br> Fort de cette base solide, je suis capable de mener à bien des projets et de résoudre les défis
+                    rencontrés avec assurance.
+                    <br> Ma capacité à me débrouiller dans ce domaine m'a permis d'acquérir une expertise pratique, mais
+                    je suis également conscient de l'importance de l'apprentissage continu dans un domaine aussi
+                    dynamique.
+                    <br> Je suis donc constamment à la recherche de nouvelles connaissances et de nouvelles compétences
+                    pour me perfectionner davantage.
+                    <br> Actuellement à la recherche d'opportunités professionnelles dans le développement web, je suis
+                    enthousiaste à l'idée de contribuer à des projets innovants et de faire progresser ma carrière dans
+                    ce domaine passionnant.
                 </p>
             </div>
-        </div>          
+        </div>
     </div>
-    
-    <div class="experience-section">
-        <h2>Expériences Professionnelles</h2>
-        <div class="experience">
-            <div class="experience-title">Alternant Développeur Web - SNCF</div>
-            <div class="experience-dates">Septembre 2022 - Présent</div>
-            <div class="experience-description">
-                En tant qu'alternant développeur web à la SNCF depuis septembre 2022, j'ai eu l'opportunité d'acquérir une expérience pratique au sein d'une équipe dynamique et innovante. Mon rôle principal consiste à contribuer au développement et à la maintenance des applications web utilisées dans le cadre des opérations ferroviaires. Cette expérience m'a permis de mettre en pratique mes compétences en développement web, notamment dans les langages de programmation tels que HTML, CSS et JavaScript, ainsi que dans l'utilisation de frameworks et de bibliothèques modernes comme React.js ou Angular. En travaillant sur des projets concrets au sein de la SNCF, j'ai développé ma capacité à collaborer efficacement avec d'autres membres de l'équipe, à résoudre des problèmes complexes et à m'adapter aux exigences spécifiques du domaine ferroviaire. Je suis fier de contribuer au développement de solutions innovantes qui améliorent l'expérience des utilisateurs et soutiennent les opérations essentielles de la SNCF.
-            </div>
-            <div class="actions">
-                <a href="#" class="btn">En savoir plus</a>
-                <a href="#" class="btn">Réalisations</a>
+
+    <div class="timeline" id="timeline">
+        <!-- Expérience Professionnelle 1 -->
+        <div class="card" data-toggle="details">
+            <div class="year">Septembre 2022 - Novembre 2024</div>
+            <div class="content">
+                <img class="card-image" src="images/logo-sncf-reseau.png" alt="SNCF">
+                <h3>Alternant développeur Web à SNCF Réseau</h3>
+                <p class="description hidden">Description de l'alternance développeur Web à SNCF Réseau.</p>
             </div>
         </div>
-        <!-- Vous pouvez ajouter d'autres expériences ici -->
+
+
+
     </div>
+
+    <!-- Popup détaillée -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" id="close">&times;</span>
+            <div class="details-content">
+                <!-- Le contenu détaillé de la carte sélectionnée sera affiché ici -->
+            </div>
+        </div>
+    </div>
+
 </body>
+<script>
+    document.querySelectorAll('.card').forEach(item => {
+        item.addEventListener('click', event => {
+            const detailsContent = item.querySelector('.content').innerHTML; // Copie le contenu de la carte
+            const description = item.querySelector('.description').innerHTML; // Copie la description
+            document.querySelector('.details-content').innerHTML = detailsContent + "<p>" + description + "</p>"; // Affiche le contenu dans la popup
+            document.getElementById('popup').style.display = 'block'; // Affiche la popup
+        })
+    });
+
+    document.getElementById('close').addEventListener('click', event => {
+        document.getElementById('popup').style.display = 'none'; // Ferme la popup
+    });
+
+
+</script>
+
 </html>
