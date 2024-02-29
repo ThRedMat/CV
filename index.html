@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Portfolio de Mathieu DARRIBAU</title>
     <style>
         body {
@@ -57,10 +58,10 @@
         .profil {
             background-color: #fff;
             padding: 20px;
-            margin: 20px auto;
+            margin: 10px 15px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
+            max-width: 100%;
         }
 
         .profil h2 {
@@ -145,7 +146,11 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             max-width: 80%;
             max-height: 80%;
+            min-width: 60%;
+            min-height: 40%;
             overflow-y: auto;
+            text-align: center;
+
         }
 
         .close {
@@ -162,22 +167,14 @@
         }
 
         .card-image {
-            max-width: 100%;
-            height: auto;
+            max-width: 25%;
+            height: 50%;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
         }
 
-        .timeline {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            /* Espace entre les cartes */
-        }
-
         .card {
             flex: 0 0 calc(50% - 20px);
-            /* Deux cartes par ligne avec un espace de 20px */
             max-width: 400px;
             background-color: #f9f9f9;
             border: 1px solid #ccc;
@@ -201,7 +198,7 @@
 
         .card .card-image {
             width: 100%;
-            height: auto;
+            height: 50%;
             display: block;
         }
 
@@ -213,6 +210,191 @@
         .hidden {
             display: none;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline {
+          position: relative;
+          margin: 0 auto;
+          background-color: #474e5d;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline::after {
+          content: '';
+          position: absolute;
+          width: 6px;
+          background-color: white;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          margin-left: -3px;
+        }
+
+        /* Container around content */
+        .container {
+          padding: 10px 40px;
+          position: relative;
+          background-color: inherit;
+          width: 50%;
+        }
+
+        /* The circles on the timeline */
+        .container::after {
+          content: '';
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          right: -17px;
+          background-color: white;
+          border: 4px solid #FF9F55;
+          top: 15px;
+          border-radius: 50%;
+          z-index: 1;
+        }
+
+        /* Place the container to the left */
+        .left {
+        left: 0;
+        }
+
+        /* Place the container to the right */
+        .right {
+        left: 50%;
+        }
+
+        /* Add arrows to the left container (pointing right) */
+        .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid white;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+        }
+
+        /* Add arrows to the right container (pointing left) */
+        .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+        }
+
+        /* Fix the circle for containers on the right side */
+        .right::after {
+        left: -16px;
+        }
+
+        /* The actual content */
+        .content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+        text-align: center;
+        cursor: pointer;
+        }
+
+        img {
+            width: 50%;
+            height: auto;
+        }
+
+        /* Media queries - Responsive timeline on screens less than 600px wide */
+    @media screen and (max-width: 600px) {
+        /* Place the timelime to the left */
+        .timeline::after {
+            left: 31px;
+        }
+
+        /* Full-width containers */
+        .container {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+
+        /* Make sure that all arrows are pointing leftwards */
+        .container::before {
+            left: 60px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        /* Make sure all circles are at the same spot */
+        .left::after, .right::after {
+            left: 15px;
+        }
+
+        /* Make all right containers behave like the left ones */
+        .right {
+            left: 0%;
+        }
+    }
+
+    /* Style personnalisé pour la barre de défilement */
+/* Utilisation des classes de couleur de Tailwind CSS */
+/* Remplacez les couleurs et les valeurs de border-radius selon vos besoins */
+
+/* Barre de défilement */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Poignée de la barre de défilement */
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px;
+}
+
+/* Piste de la barre de défilement */
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+/* Style personnalisé pour la barre de défilement en utilisant des classes de Tailwind CSS */
+/* Utilisation des classes de couleur et de border-radius de Tailwind CSS */
+/* Remplacez les couleurs et les valeurs de border-radius selon vos besoins */
+
+/* Barre de défilement */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Poignée de la barre de défilement */
+::-webkit-scrollbar-thumb {
+    background-color: bg-gray-400;
+    border-radius: 5px;
+}
+
+/* Piste de la barre de défilement */
+::-webkit-scrollbar-track {
+    background-color: bg-white;
+}
+#footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(147, 147, 255);
+    color: #333;
+    text-align: center;
+    padding: 10px;
+}
     </style>
 </head>
 
@@ -220,14 +402,14 @@
     <header>
         <div class="navbar">
             <a href="#" title="Mathieu DARRIBAU">
-                <img src="images/mathieu2.jpg" alt="Mathieu DARRIBAU">
+                <img src="images/memoji-mathieu.png" alt="Mathieu DARRIBAU" width="100" height="100">
             </a>
         </div>
         <div class="menu-navbar">
             <ul class="nav-links">
                 <li><a href="#">Accueil</a></li>
                 <li><a href="#">Profil</a></li>
-                <li><a href="competance.html">Compétences</a></li>
+                <li><a href="#">Compétences</a></li>
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -260,85 +442,69 @@
         </div>
     </div>
 
-    <div class="timeline" id="timeline">
-        <!-- Expérience Professionnelle 1 -->
-        <div class="card" data-toggle="details">
-            <div class="year">Septembre 2022 - Novembre 2024</div>
+
+    <div class="timeline">
+        <div class="container left">
             <div class="content">
+                <div class="year">
+                    <h2>Septembre 2022 - Novembre 2024</h2>
+                </div>
                 <img class="card-image" src="images/logo-sncf-reseau.png" alt="SNCF">
                 <h3>Alternant développeur Web à SNCF Réseau</h3>
                 <p class="description hidden">Description de l'alternance développeur Web à SNCF Réseau.</p>
             </div>
         </div>
-
-        <!-- Expérience Professionnelle 2 -->
-        <div class="card" data-toggle="details">
-            <div class="year">Juin 2022 - Août 2022</div>
+        <div class="container right">
             <div class="content">
-                <img class="card-image" src="images/logo-scalandes.jpg" alt="Scalandes">
-                <h3>Préparateur de commande</h3>
-                <p class="description hidden">Description de préparateur de commandes.</p>
+              <div class="year">
+                  <h2>Juin 2022 - Août 2022</h2>
+              </div>
+              <img class="card-image" src="images/logo-scalandes.jpg" alt="Scalandes">
+                  <h3>Préparateur de commande</h3>
+                  <p class="description hidden">Description de préparateur de commandes.</p>
             </div>
         </div>
-    </div>
-    <div class="timeline" id="timeline">
-        <div class="card" data-toggle="details">
-            <div class="year">Février 2022 - Juin 2022</div>
+        <div class="container left">
             <div class="content">
-                <img class="card-image" src="images/logo-ufc.jpg" alt="Ufc-Que-Choisir">
-                <h3>Stage à UFC-Que-Choisir, développeur Web.</h3>
-                <p class="description hidden">Description du stage à UFC-Que-Choisir.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="timeline" id="timeline">
-        <div class="card" data-toggle="details">
-            <div class="year">Juin 2021 - Septembre 2021</div>
-            <div class="content">
-                <img class="card-image" src="images/gaea.png" alt="Gaea21">
-                <h3>Stage chez Gaea21, développeur Web.</h3>
-                <p class="description hidden">Description du stage chez Gaea21.</p>
-            </div>
-        </div>
-        <div class="card" data-toggle="details">
-            <div class="year">Juillet 2020 - Août 2020</div>
-            <div class="content">
+                <div class="year">
+                    <h2>Juillet 2020 - Août 2020</h2>
+                </div>
                 <img class="card-image" src="images/metro.jpg" alt="METRO">
                 <h3>Emploi saisonnier chez METRO Bordeaux.</h3>
                 <p class="description hidden">Description de l'expérience chez METRO.</p>
             </div>
         </div>
-    </div>
-
-    <div class="timeline" id="timeline">
-        <div class="card" data-toggle="details">
-            <div class="year">Juillet 2017</div>
+        <div class="container right">
             <div class="content">
+                <div class="year">
+                    <h2>Juillet 2017</h2>
+                </div>
                 <img class="card-image" src="images/logo-restos-du-coeur.jpg" alt="Restos du Coeur">
                 <h3>Bénévole au sein des Restos du Coeur à Mont-de-Marsan.</h3>
                 <p class="description hidden">Description de l'expérience aux Restos du Coeur.</p>
             </div>
         </div>
-
-
-        <div class="card" data-toggle="details">
-            <div class="year">Décembre 2016</div>
+        <div class="container left">
             <div class="content">
-                <img class="card-image" src="images/Bordeaux_Metropole.png" alt="Restos du Coeur">
-                <h3>Stage de troisième dans l'urbanisme à Bordeaux Métropole.</h3>
-                <p class="description hidden">Description de l'expérience à Bordeaux Métropole.</p>
-            </div>
+                <div class="year">
+                    <h2>Décembre 2016</h2>
+                </div>
+                <img class="card-image" src="images/Bordeaux_Metropole.png" alt="Bordeaux_Metropole">
+                  <h3>Stage de troisième dans l'urbanisme à Bordeaux Métropole.</h3>
+                  <p class="description hidden">Description de l'expérience à Bordeaux Métropole.</p>
+              </div>
         </div>
-
-        <div class="card" data-toggle="details">
-            <div class="year">2013 - 2017</div>
+        <div class="container right">
             <div class="content">
+                <div class="year">
+                    <h2>2013 - 2017</h2>
+                </div>
                 <img class="card-image" src="images/pena-el-juli.jpg" alt="pena el juli">
                 <h3>Bénévole au sein de la Peña El Juli pendant les fêtes de la Madelaine a Mont-de-Marsan.</h3>
                 <p class="description hidden">Description de l'expérience à la Peña El Juli.</p>
-            </div>
+              </div>
         </div>
+
     </div>
 
     <!-- Popup détaillée -->
@@ -350,13 +516,20 @@
             </div>
         </div>
     </div>
-
+    <div id="footer" class="">
+        <p>Mathieu DARRIBAU - Portfolio</p> 
+        <a href="tel:066666666"><i class="fas fa-phone"> Téléphone : 066666666</i></a>
+        <a href="mailto:micheloubleck@gmail.fr"><i class="far fa-envelope">Email : micheloubleck@gmail.fr</i></a>
+        <a href="https://www.linkedin.com/in/mathieu-darribau/" target="_blank"><i class="fab fa-linkedin"></i>Mon profil LinkedIn</a>
+        <a href="https://github.com/ThRedmat" target="_blank"><i class="fab fa-github"></i>Mon profil Github</a>
+    </div>
 </body>
 <script>
-    document.querySelectorAll('.card').forEach(item => {
+    document.querySelectorAll('.container').forEach(item => {
         item.addEventListener('click', event => {
             const detailsContent = item.querySelector('.content').innerHTML; // Copie le contenu de la carte
             const description = item.querySelector('.description').innerHTML; // Copie la description
+            const image = item.querySelector('.card-image').src;               
             document.querySelector('.details-content').innerHTML = detailsContent + "<p>" + description + "</p>"; // Affiche le contenu dans la popup
             document.getElementById('popup').style.display = 'block'; // Affiche la popup
         })
