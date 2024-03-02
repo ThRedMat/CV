@@ -26,7 +26,6 @@
         .navbar img {
             width: 100px;
             height: auto;
-            background-image: url(/images/mathieu1.png);
         }
 
         .menu-navbar ul {
@@ -217,96 +216,96 @@
 
         /* The actual timeline (the vertical ruler) */
         .timeline {
-          position: relative;
-          margin: 0 auto;
-          background-color: #474e5d;
+            position: relative;
+            margin: 0 auto;
+            background-color: #474e5d;
         }
 
         /* The actual timeline (the vertical ruler) */
         .timeline::after {
-          content: '';
-          position: absolute;
-          width: 6px;
-          background-color: white;
-          top: 0;
-          bottom: 0;
-          left: 50%;
-          margin-left: -3px;
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
         }
 
         /* Container around content */
         .container {
-          padding: 10px 40px;
-          position: relative;
-          background-color: inherit;
-          width: 50%;
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
         }
 
         /* The circles on the timeline */
         .container::after {
-          content: '';
-          position: absolute;
-          width: 25px;
-          height: 25px;
-          right: -17px;
-          background-color: white;
-          border: 4px solid #FF9F55;
-          top: 15px;
-          border-radius: 50%;
-          z-index: 1;
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #FF9F55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
         }
 
         /* Place the container to the left */
         .left {
-        left: 0;
+            left: 0;
         }
 
         /* Place the container to the right */
         .right {
-        left: 50%;
+            left: 50%;
         }
 
         /* Add arrows to the left container (pointing right) */
         .left::before {
-        content: " ";
-        height: 0;
-        position: absolute;
-        top: 22px;
-        width: 0;
-        z-index: 1;
-        right: 30px;
-        border: medium solid white;
-        border-width: 10px 0 10px 10px;
-        border-color: transparent transparent transparent white;
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
         }
 
         /* Add arrows to the right container (pointing left) */
         .right::before {
-        content: " ";
-        height: 0;
-        position: absolute;
-        top: 22px;
-        width: 0;
-        z-index: 1;
-        left: 30px;
-        border: medium solid white;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
         }
 
         /* Fix the circle for containers on the right side */
         .right::after {
-        left: -16px;
+            left: -16px;
         }
 
         /* The actual content */
         .content {
-        padding: 20px 30px;
-        background-color: white;
-        position: relative;
-        border-radius: 6px;
-        text-align: center;
-        cursor: pointer;
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
         }
 
         img {
@@ -315,86 +314,142 @@
         }
 
         /* Media queries - Responsive timeline on screens less than 600px wide */
-    @media screen and (max-width: 600px) {
-        /* Place the timelime to the left */
-        .timeline::after {
-            left: 31px;
+        @media screen and (max-width: 600px) {
+
+            /* Place the timelime to the left */
+            .timeline::after {
+                left: 31px;
+            }
+
+            /* Full-width containers */
+            .container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            /* Make sure that all arrows are pointing leftwards */
+            .container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            /* Make sure all circles are at the same spot */
+            .left::after,
+            .right::after {
+                left: 15px;
+            }
+
+            /* Make all right containers behave like the left ones */
+            .right {
+                left: 0%;
+            }
         }
 
-        /* Full-width containers */
-        .container {
+        /* Style personnalisé pour la barre de défilement */
+        /* Utilisation des classes de couleur de Tailwind CSS */
+        /* Remplacez les couleurs et les valeurs de border-radius selon vos besoins */
+
+        /* Barre de défilement */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Poignée de la barre de défilement */
+        ::-webkit-scrollbar-thumb {
+            background-color: gray;
+            border-radius: 5px;
+        }
+
+        /* Piste de la barre de défilement */
+        ::-webkit-scrollbar-track {
+            background-color: white;
+        }
+
+        /* Style personnalisé pour la barre de défilement en utilisant des classes de Tailwind CSS */
+        /* Utilisation des classes de couleur et de border-radius de Tailwind CSS */
+        /* Remplacez les couleurs et les valeurs de border-radius selon vos besoins */
+
+        /* Barre de défilement */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Poignée de la barre de défilement */
+        ::-webkit-scrollbar-thumb {
+            background-color: bg-gray-400;
+            border-radius: 5px;
+        }
+
+        /* Piste de la barre de défilement */
+        ::-webkit-scrollbar-track {
+            background-color: bg-white;
+        }
+
+        #footer {
+            left: 0;
+            bottom: 0;
             width: 100%;
-            padding-left: 70px;
-            padding-right: 25px;
+            background-color: rgb(147, 147, 255);
+            color: #333;
+            text-align: center;
+            padding: 10px;
         }
 
-        /* Make sure that all arrows are pointing leftwards */
-        .container::before {
-            left: 60px;
-            border: medium solid white;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent white transparent transparent;
+        .footer-image {
+            max-width: 100px;
+            /* ou toute autre valeur que vous préférez */
         }
 
-        /* Make sure all circles are at the same spot */
-        .left::after, .right::after {
-            left: 15px;
+        .footer-horizontal {
+            display: flex;
+            justify-content: space-between;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Make all right containers behave like the left ones */
-        .right {
-            left: 0%;
+        .footer-column {
+            flex: 1;
         }
-    }
 
-    /* Style personnalisé pour la barre de défilement */
-/* Utilisation des classes de couleur de Tailwind CSS */
-/* Remplacez les couleurs et les valeurs de border-radius selon vos besoins */
+        .footer-column a {
+            display: flex;
+            align-items: center;
+        }
 
-/* Barre de défilement */
-::-webkit-scrollbar {
-    width: 10px;
-}
+        .footer-column a:first-child {
+            margin-bottom: 10px;
+            /* Espacement entre les deux éléments */
+        }
 
-/* Poignée de la barre de défilement */
-::-webkit-scrollbar-thumb {
-    background-color: gray;
-    border-radius: 5px;
-}
+        .footer-style {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-/* Piste de la barre de défilement */
-::-webkit-scrollbar-track {
-    background-color: white;
-}
+        .footer-style a {
+            text-decoration: none;
+            color: #333;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
 
-/* Style personnalisé pour la barre de défilement en utilisant des classes de Tailwind CSS */
-/* Utilisation des classes de couleur et de border-radius de Tailwind CSS */
-/* Remplacez les couleurs et les valeurs de border-radius selon vos besoins */
+        .footer-style a i {
+            margin-right: 10px;
+        }
 
-/* Barre de défilement */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Poignée de la barre de défilement */
-::-webkit-scrollbar-thumb {
-    background-color: bg-gray-400;
-    border-radius: 5px;
-}
-
-/* Piste de la barre de défilement */
-::-webkit-scrollbar-track {
-    background-color: bg-white;
-}
-#footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(147, 147, 255);
-    color: #333;
-    text-align: center;
-    padding: 10px;
-}
+        .footer-style a:hover {
+            color: #007bff;
+        }
     </style>
 </head>
 
@@ -456,12 +511,12 @@
         </div>
         <div class="container right">
             <div class="content">
-              <div class="year">
-                  <h2>Juin 2022 - Août 2022</h2>
-              </div>
-              <img class="card-image" src="images/logo-scalandes.jpg" alt="Scalandes">
-                  <h3>Préparateur de commande</h3>
-                  <p class="description hidden">Description de préparateur de commandes.</p>
+                <div class="year">
+                    <h2>Juin 2022 - Août 2022</h2>
+                </div>
+                <img class="card-image" src="images/logo-scalandes.jpg" alt="Scalandes">
+                <h3>Préparateur de commande</h3>
+                <p class="description hidden">Description de préparateur de commandes.</p>
             </div>
         </div>
         <div class="container left">
@@ -490,9 +545,9 @@
                     <h2>Décembre 2016</h2>
                 </div>
                 <img class="card-image" src="images/Bordeaux_Metropole.png" alt="Bordeaux_Metropole">
-                  <h3>Stage de troisième dans l'urbanisme à Bordeaux Métropole.</h3>
-                  <p class="description hidden">Description de l'expérience à Bordeaux Métropole.</p>
-              </div>
+                <h3>Stage de troisième dans l'urbanisme à Bordeaux Métropole.</h3>
+                <p class="description hidden">Description de l'expérience à Bordeaux Métropole.</p>
+            </div>
         </div>
         <div class="container right">
             <div class="content">
@@ -502,7 +557,7 @@
                 <img class="card-image" src="images/pena-el-juli.jpg" alt="pena el juli">
                 <h3>Bénévole au sein de la Peña El Juli pendant les fêtes de la Madelaine a Mont-de-Marsan.</h3>
                 <p class="description hidden">Description de l'expérience à la Peña El Juli.</p>
-              </div>
+            </div>
         </div>
 
     </div>
@@ -516,20 +571,63 @@
             </div>
         </div>
     </div>
-    <div id="footer" class="">
-        <p>Mathieu DARRIBAU - Portfolio</p> 
-        <a href="tel:066666666"><i class="fas fa-phone"> Téléphone : 066666666</i></a>
-        <a href="mailto:micheloubleck@gmail.fr"><i class="far fa-envelope">Email : micheloubleck@gmail.fr</i></a>
-        <a href="https://www.linkedin.com/in/mathieu-darribau/" target="_blank"><i class="fab fa-linkedin"></i>Mon profil LinkedIn</a>
-        <a href="https://github.com/ThRedmat" target="_blank"><i class="fab fa-github"></i>Mon profil Github</a>
+    <div id="footer" class="footer-horizontal">
+        <div class="footer-column">
+            <img src="images/mathiou2.png" alt="Mathieu DARRIBAU" class="footer-image" width="100" height="100">
+            <p>Mathieu DARRIBAU - Portfolio</p>
+        </div>
+
+
+        <div class="footer-column">
+            <div class="footer-style">
+                <a href="mailto:micheloubleck@gmail.fr">
+                    <i class="far fa-envelope"></i> Email : micheloubleck@gmail.fr
+                </a>
+                <a href="tel:06-66-66-25-82">
+                    <i class="fas fa-phone"></i> Téléphone : 06-66-66-25-82
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <div class="footer-style">
+                <a href="https://www.linkedin.com/in/mathieu-darribau/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    Mon profil LinkedIn
+                </a>
+                <a href="https://github.com/ThRedmat" target="_blank">
+                    <i class="fab fa-github"></i>
+                    Mon profil GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <div class="footer-style">
+                <ul class="nav-links">
+                    <a href="#">Accueil</a>
+                    <a href="#">Profil</a>
+                    <a href="#">Compétences</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Contact</a>
+                </ul>
+            </div>
+        </div>
     </div>
+
+
+
+
+
+
+
 </body>
 <script>
     document.querySelectorAll('.container').forEach(item => {
         item.addEventListener('click', event => {
             const detailsContent = item.querySelector('.content').innerHTML; // Copie le contenu de la carte
             const description = item.querySelector('.description').innerHTML; // Copie la description
-            const image = item.querySelector('.card-image').src;               
+            const image = item.querySelector('.card-image').src;
             document.querySelector('.details-content').innerHTML = detailsContent + "<p>" + description + "</p>"; // Affiche le contenu dans la popup
             document.getElementById('popup').style.display = 'block'; // Affiche la popup
         })
