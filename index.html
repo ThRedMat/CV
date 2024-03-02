@@ -210,6 +210,7 @@
             display: none;
         }
 
+
         * {
             box-sizing: border-box;
         }
@@ -450,6 +451,37 @@
         .footer-style a:hover {
             color: #007bff;
         }
+
+        .experience {
+            font-size: 16px;
+            color: blue;
+        }
+
+        .liste-taches {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .liste-taches li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .liste-taches li:before {
+            content: "\2022";
+            /* Utilisation du point comme puce */
+            color: #007bff;
+            /* Couleur de la puce */
+            font-weight: bold;
+            /* Mettre en gras */
+            font-size: 16px;
+            /* Taille de la police */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
     </style>
 </head>
 
@@ -506,9 +538,21 @@
                 </div>
                 <img class="card-image" src="images/logo-sncf-reseau.png" alt="SNCF">
                 <h3>Alternant développeur Web à SNCF Réseau</h3>
-                <p class="description hidden">Description de l'alternance développeur Web à SNCF Réseau.</p>
+                <div class="description hidden">
+                    <div class="description">
+                        <p class="experience">Les missions que j'ai réalisées pendant cette expérience :</p>
+                        <ul class="liste-taches">
+                            <li>Refonte d'un site web nommé "Portail de la Robustesse"</li>
+                            <li>Création d'un site internet permettant de recenser les rondes des Maraudes</li>
+                            <li>Participation à la conception et au développement d'un site Web en collaboration avec
+                                une entreprise externe</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+
+
         <div class="container right">
             <div class="content">
                 <div class="year">
@@ -516,47 +560,114 @@
                 </div>
                 <img class="card-image" src="images/logo-scalandes.jpg" alt="Scalandes">
                 <h3>Préparateur de commande</h3>
-                <p class="description hidden">Description de préparateur de commandes.</p>
+                <div class="description hidden">
+                    <div class="description">
+                        <p class="experience">Les missions que j'ai réalisées pendant cette expérience :</p>
+                        <ul class="liste-taches">
+                            <li>Préparation des commandes indiquées a l'aide d'une commande vocale</li>
+                            <li>Vérification du matériel mis à disposition</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+
+
         <div class="container left">
+            <div class="content">
+                <div class="year">
+                    <h2>Juillet 2021 - Septembre 2021</h2>
+                </div>
+                <img class="card-image" src="images/gaea.png" alt="Gaea21">
+                <h3>Stagiaire développeur web au sein de Gaea21.</h3>
+                <div class="description hidden">
+                    <div class="description">
+                        <p class="experience">Les missions que j'ai réalisées pendant cette expérience :</p>
+                        <ul class="liste-taches">
+                            <li>Développement d'un site web nommé "Répertoire Vert"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container right">
             <div class="content">
                 <div class="year">
                     <h2>Juillet 2020 - Août 2020</h2>
                 </div>
                 <img class="card-image" src="images/metro.jpg" alt="METRO">
-                <h3>Emploi saisonnier chez METRO Bordeaux.</h3>
-                <p class="description hidden">Description de l'expérience chez METRO.</p>
+                <h3>Emploi saisonnier en tant que "Commercial et mise en rayon" chez METRO Bordeaux.</h3>
+                <div class="description hidden">
+
+                    <div class="description">
+                        <p class="experience">Les missions que j'ai réalisées pendant cette expérience :</p>
+                        <ul class="liste-taches">
+                            <li>Remplissage des rayons </li>
+                            <li>Conseils à la clientèle</li>
+                            <li>Chargement de livraisons</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container right">
+
+        <div class="container left">
             <div class="content">
                 <div class="year">
                     <h2>Juillet 2017</h2>
                 </div>
                 <img class="card-image" src="images/logo-restos-du-coeur.jpg" alt="Restos du Coeur">
                 <h3>Bénévole au sein des Restos du Coeur à Mont-de-Marsan.</h3>
-                <p class="description hidden">Description de l'expérience aux Restos du Coeur.</p>
+                <div class="description hidden">
+                    <div class="description">
+                        <p class="experience">Les missions que j'ai réalisées pendant cette expérience :</p>
+                        <ul class="liste-taches">
+                            <li>Mise à jour de la liste des adhérents dans un fichier Excel</li>
+                            <li>Préparation des colis et tournées dans les différents « Restos du Cœurs » aux
+                                alentours
+                                de Mont de Marsan</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container left">
+        <div class="container right">
             <div class="content">
                 <div class="year">
                     <h2>Décembre 2016</h2>
                 </div>
                 <img class="card-image" src="images/Bordeaux_Metropole.png" alt="Bordeaux_Metropole">
                 <h3>Stage de troisième dans l'urbanisme à Bordeaux Métropole.</h3>
-                <p class="description hidden">Description de l'expérience à Bordeaux Métropole.</p>
+                <div class="description hidden">
+                    <div class="description">
+                        <p class="experience">Les missions que j'ai réalisées pendant cette expérience :</p>
+                        <ul class="liste-taches">
+                            <li>Guider et conseiller les clients</li>
+                            <li>Prendre des décisions importantes et être réactif</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container right">
+        <div class="container left">
             <div class="content">
                 <div class="year">
                     <h2>2013 - 2017</h2>
                 </div>
                 <img class="card-image" src="images/pena-el-juli.jpg" alt="pena el juli">
-                <h3>Bénévole au sein de la Peña El Juli pendant les fêtes de la Madelaine a Mont-de-Marsan.</h3>
-                <p class="description hidden">Description de l'expérience à la Peña El Juli.</p>
+                <h3>Bénévole au sein de la Peña El Juli pendant les fêtes de la Madelaine à Mont-de-Marsan.</h3>
+                <div class="description hidden">
+                    <div class="description">
+                        <p class="experience">Les missions que j'ai réalisées pendant cette expérience :</p>
+                        <ul class="liste-taches">
+                            <li>Montage et démontage de la Peña</li>
+                            <li>Service en restauration</li>
+                            <li>Préparation et décoration de la Peña en amont des fêtes de la Madelaine.</li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -622,6 +733,7 @@
 
 
 </body>
+
 <script>
     document.querySelectorAll('.container').forEach(item => {
         item.addEventListener('click', event => {
@@ -636,7 +748,6 @@
     document.getElementById('close').addEventListener('click', event => {
         document.getElementById('popup').style.display = 'none'; // Ferme la popup
     });
-
 
 </script>
 
