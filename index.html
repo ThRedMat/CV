@@ -500,7 +500,7 @@
             position: absolute;
             top: -18px;
             left: 40px;
-            padding:  5px 10px;
+            padding: 5px 10px;
             background-color: #f8f9fa;
         }
 
@@ -510,12 +510,12 @@
             color: gray;
             font-size: 2em;
             font-weight: 500;
-            margin-right: 40px ;
+            margin-right: 40px;
         }
 
         .skill .name span {
             margin: 15px 0;
-            box-shadow:  9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #ffffff;
+            box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #ffffff;
             padding: 10px 20px;
             text-align: center;
             border-radius: 50px;
@@ -525,8 +525,8 @@
         }
 
         .skill .name span:hover {
-            box-shadow: 9.91px 9.91px 15px #d9dade, 
-                -9.91px -9.91px 15px #ffffff, 
+            box-shadow: 9.91px 9.91px 15px #d9dade,
+                -9.91px -9.91px 15px #ffffff,
                 inset 9.91px 9.91px 15px #d9dade,
                 inset -9.91px -9.91px 15px #ffffff;
             color: #1a60f2;
@@ -538,7 +538,7 @@
             justify-content: space-around;
         }
 
-        .bar { 
+        .bar {
             width: 400px;
             height: 30px;
             border-radius: 20px;
@@ -559,8 +559,42 @@
             width: 80%;
         }
 
-       .bar:nth-child(3) .progress {
+        .bar:nth-child(3) .progress {
             width: 20%;
+        }
+
+        .front,
+        .back {
+            width: 50%;
+            /* réglage de la largeur */
+            float: left;
+            /* pour les aligner côte à côte */
+            box-sizing: border-box;
+            /* pour inclure la bordure et le padding dans la largeur définie */
+        }
+
+        .front {
+            background-color: #f0f0f0;
+            text-align: center;
+            /* couleur de fond pour la div front */
+        }
+
+        .back {
+            background-color: #e0e0e0;
+            text-align: center;
+            /* couleur de fond pour la div back */
+        }
+
+        .soft-skill {
+            background-color: #f0f0f0;
+            text-align: center;
+            /* couleur de fond pour la div front */
+        }
+
+        .langues {
+            background-color: #e0e0e0;
+            text-align: center;
+            /* couleur de fond pour la div back */
         }
     </style>
 </head>
@@ -574,16 +608,17 @@
         </div>
         <div class="menu-navbar">
             <ul class="nav-links">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Profil</a></li>
-                <li><a href="#">Compétences</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#experience">Mes expériences</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#footer">Contact</a></li>
             </ul>
         </div>
     </header>
 
-    <div class="profil">
+    <div class="profil" id="profil">
         <h2>A propos de moi :</h2>
         <div class="contenu">
             <div class="contenu-image">
@@ -610,7 +645,7 @@
     </div>
 
 
-    <div class="timeline">
+    <div class="timeline" id="experience">
         <div class="container left">
             <div class="content">
                 <div class="year">
@@ -751,20 +786,53 @@
         </div>
     </div>
 
-    <div class="skill">
-        <div class="name">
-            <span>HTML/CSS</span>
-            <span>Javascript</span>
-            <span>PHP</span>
-            <!--<span>React.js</span>
-            <span>Angular.js</span>
-            <span>SQL</span>-->
+
+    <div class="skill" id="competences">
+        <div class="front">
+            <h1>Langage Front-end</h1>
+            <ul>
+                <li>HTML/CSS</li>
+                <li>React.Js</li>
+                <li>Vue.Js</li>
+                <li>Angular.Js</li>
+                <li>Javascript</li>
+            </ul>
         </div>
-        <div class="bar-container">
-            <div class="bar"><div class="progress"></div></div>
-            <div class="bar"><div class="progress"></div></div>
-            <div class="bar"><div class="progress"></div></div>
+        <div class="back">
+            <h1>Langage Back-end</h1>
+            <ul>
+                <li>PHP</li>
+                <li>SQL</li>
+                <li>Firebase</li>
+                <li>MongoDB</li>
+                <li>Oracle</li>
+                <li>SQL Server</li>
+                <li>Node.Js</li>
+            </ul>
         </div>
+        <div class="soft-skills">
+            <div class="soft-skill">
+                <h1>Soft skills</h1>
+                <ul>
+                    <li>Méthodes Agiles</li>
+                    <li>Gestion de Projet</li>
+                    <li>Maitrise suite Office (Excel, Word, PowerPoint, ...)</li>
+                </ul>
+            </div>
+
+            <div class="langues">
+                <h2>Langues parlées :</h2>
+                <ul>
+                    <li>Francais : langue maternelle</li>
+                    <li>Anglais : Niveau intermédiaire</li>
+                    <li>Espagnol : Niveau scolaire</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio" id="portfolio">
+
     </div>
 
     <!-- Popup détaillée -->
@@ -810,20 +878,15 @@
         <div class="footer-column">
             <div class="footer-style">
                 <ul class="nav-links">
-                    <a href="#">Accueil</a>
-                    <a href="#">Profil</a>
-                    <a href="#">Compétences</a>
-                    <a href="#">Portfolio</a>
-                    <a href="#">Contact</a>
+                    <a href="#profil">Profil</a>
+                    <a href="#experience">Mes expériences</a>
+                    <a href="#competences">Compétences</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#footer">Contact</a>
                 </ul>
             </div>
         </div>
     </div>
-
-
-
-
-
 
 
 </body>

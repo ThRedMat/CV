@@ -6,3 +6,5 @@
 - rendre les liens cliquables
 - voir pour rendre responsive la navbar (avec un menu hamburger)
 - bouton télécharger CV + un aperçu 
+- dans les compétences, mettre les images
+- revoir style des "mes compétences"
