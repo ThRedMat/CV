@@ -484,118 +484,57 @@
         }
 
         /* barre skills */
-
-        .skill {
-            margin-top: 30px;
-            margin-bottom: 30px;
+        .skills {
             display: flex;
-            border: 2px solid #9da2ad;
-            padding: 4em;
-            border-radius: 30px;
-            position: relative;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
-        .skill::before {
-            content: "Mes Compétences";
-            position: absolute;
-            top: -18px;
-            left: 40px;
-            padding: 5px 10px;
+        .column {
+            width: calc(25% - 20px);
+            /* Ajustez la largeur en fonction de vos préférences */
+            margin-bottom: 20px;
+        }
+
+        .column .front,
+        .column .back,
+        .column .soft-skills,
+        .column .languages {
             background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .skill .name {
-            display: flex;
-            flex-direction: column;
-            color: gray;
-            font-size: 2em;
-            font-weight: 500;
-            margin-right: 40px;
-        }
-
-        .skill .name span {
-            margin: 15px 0;
-            box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #ffffff;
-            padding: 10px 20px;
+        .column h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.2em;
             text-align: center;
-            border-radius: 50px;
-            border: 5px solid #ebecf0;
-            transition: 0.2s;
-            cursor: pointer;
         }
 
-        .skill .name span:hover {
-            box-shadow: 9.91px 9.91px 15px #d9dade,
-                -9.91px -9.91px 15px #ffffff,
-                inset 9.91px 9.91px 15px #d9dade,
-                inset -9.91px -9.91px 15px #ffffff;
-            color: #1a60f2;
+        .column ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        .bar-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
-
-        .bar {
-            width: 400px;
-            height: 30px;
-            border-radius: 20px;
-            box-shadow: inset 6px 6px 6px #d9dade, inset 6px 6px 6px #ffffff;
-        }
-
-        .bar .progress {
-            height: 100%;
-            background: linear-gradient(to right, #0e3fea, #1d69f5);
-            border-radius: 20px;
-        }
-
-        .bar:nth-child(1) .progress {
-            width: 100%;
-        }
-
-        .bar:nth-child(2) .progress {
-            width: 80%;
-        }
-
-        .bar:nth-child(3) .progress {
-            width: 20%;
-        }
-
-        .front,
-        .back {
-            width: 50%;
-            /* réglage de la largeur */
-            float: left;
-            /* pour les aligner côte à côte */
-            box-sizing: border-box;
-            /* pour inclure la bordure et le padding dans la largeur définie */
-        }
-
-        .front {
-            background-color: #f0f0f0;
+        .column ul li {
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: #555;
             text-align: center;
-            /* couleur de fond pour la div front */
         }
 
-        .back {
-            background-color: #e0e0e0;
-            text-align: center;
-            /* couleur de fond pour la div back */
+        .column ul li:before {
+            content: "•";
+            margin-right: 8px;
+            color: #007bff;
         }
 
-        .soft-skill {
-            background-color: #f0f0f0;
-            text-align: center;
-            /* couleur de fond pour la div front */
-        }
+        /* Ajoutez d'autres styles CSS selon vos besoins */
 
-        .langues {
-            background-color: #e0e0e0;
-            text-align: center;
-            /* couleur de fond pour la div back */
-        }
+
+        /* Ajoutez d'autres styles CSS selon vos besoins */
     </style>
 </head>
 
@@ -787,49 +726,55 @@
     </div>
 
 
-    <div class="skill" id="competences">
-        <div class="front">
-            <h1>Langage Front-end</h1>
-            <ul>
-                <li>HTML/CSS</li>
-                <li>React.Js</li>
-                <li>Vue.Js</li>
-                <li>Angular.Js</li>
-                <li>Javascript</li>
-            </ul>
+    <div class="skills" id="competences">
+        <div class="column">
+            <div class="front">
+                <h2>Langage Front-end</h2>
+                <ul>
+                    <li>HTML/CSS</li>
+                    <li>React.Js</li>
+                    <li>Vue.Js</li>
+                    <li>Angular.Js</li>
+                    <li>Javascript</li>
+                </ul>
+            </div>
         </div>
-        <div class="back">
-            <h1>Langage Back-end</h1>
-            <ul>
-                <li>PHP</li>
-                <li>SQL</li>
-                <li>Firebase</li>
-                <li>MongoDB</li>
-                <li>Oracle</li>
-                <li>SQL Server</li>
-                <li>Node.Js</li>
-            </ul>
+        <div class="column">
+            <div class="back">
+                <h2>Langage Back-end</h2>
+                <ul>
+                    <li>PHP</li>
+                    <li>SQL</li>
+                    <li>Firebase</li>
+                    <li>MongoDB</li>
+                    <li>Oracle</li>
+                    <li>SQL Server</li>
+                    <li>Node.Js</li>
+                </ul>
+            </div>
         </div>
-        <div class="soft-skills">
-            <div class="soft-skill">
-                <h1>Soft skills</h1>
+        <div class="column">
+            <div class="soft-skills">
+                <h2>Soft skills</h2>
                 <ul>
                     <li>Méthodes Agiles</li>
                     <li>Gestion de Projet</li>
                     <li>Maitrise suite Office (Excel, Word, PowerPoint, ...)</li>
                 </ul>
             </div>
-
-            <div class="langues">
+        </div>
+        <div class="column">
+            <div class="languages">
                 <h2>Langues parlées :</h2>
                 <ul>
-                    <li>Francais : langue maternelle</li>
+                    <li>Francais : Langue maternelle</li>
                     <li>Anglais : Niveau intermédiaire</li>
                     <li>Espagnol : Niveau scolaire</li>
                 </ul>
             </div>
         </div>
     </div>
+
 
     <div class="portfolio" id="portfolio">
 
